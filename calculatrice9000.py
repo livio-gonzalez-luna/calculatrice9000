@@ -74,12 +74,20 @@ lg = Button(root, text="lg", padx=27, pady=10, relief=RAISED, bg="Black", fg="Wh
 lg.bind("<Button-1>", sc)
 ln = Button(root, text="ln", padx=27, pady=10, relief=RAISED, bg="Black", fg="White")
 ln.bind("<Button-1>", sc)
+pi = Button(root, text="π", padx=27, pady=10, relief=RAISED, bg="Black", fg="White")
+pi.bind("Button1-1", sc)
 
-div = Button(root, text="/", padx=29, pady=10, relief=RAISED)
-
+# Simple signs
+plus = Button(root, text="+", padx=27, pady=10, relief=RAISED, bg="Black", fg="White", command=lambda: click("+"))
+minus = Button(root, text="-", padx=27, pady=10, relief=RAISED, bg="Black", fg="White", command=lambda: click("-"))
+div = Button(root, text="/", padx=27, pady=10, relief=RAISED, bg="Black", fg="White", command=lambda: click("/"))
+mult = Button(root, text="x", padx=26, pady=10, relief=RAISED, bg="Black", fg="White", command=lambda: click("*"))
+equal = Button(root, text="=", padx=26, pady=10, relief=RAISED, bg="Orange", fg="White", command=evaluate)
+# Syntax
 dot = Button(root, text=".", padx=27, pady=10, relief=RAISED, bg="Black", fg="White", command=lambda: click("."))
-bksp = Button(root, text="Bksp", padx=27, pady=10, relief=RAISED, bg="Red", fg="White", command=bksps)
-
+bksp = Button(root, text="Bksp", padx=17, pady=10, relief=RAISED, bg="Red", fg="White", command=bksps)
+cls = Button(root, text="C", padx=27, pady=10, relief=RAISED, bg="Red", fg="White", command=clear)
+# Numbers
 zero = Button(root, text="0", padx=27, pady=10, relief=RAISED, bg="Grey", fg="White", command=lambda: click("0"))
 one = Button(root, text="1", padx=27, pady=10, relief=RAISED, bg="Grey", fg="White", command=lambda: click("1"))
 two = Button(root, text="2", padx=27, pady=10, relief=RAISED, bg="Grey", fg="White", command=lambda: click("2"))
@@ -90,25 +98,6 @@ six = Button(root, text="6", padx=27, pady=10, relief=RAISED, bg="Grey", fg="Whi
 seven = Button(root, text="7", padx=27, pady=10, relief=RAISED, bg="Grey", fg="White", command=lambda: click("7"))
 eight = Button(root, text="8", padx=27, pady=10, relief=RAISED, bg="Grey", fg="White", command=lambda: click("8"))
 nine = Button(root, text="9", padx=27, pady=10, relief=RAISED, bg="Grey", fg="White", command=lambda: click("9"))
-
-lg.grid(row=1, column=0)
-ln.grid(row=1, column=1)
-# par1nd.grid(row=1, column=2)
-# par2nd.grid(row=1, column=3)
-div.grid(row=3, column=4)
-dot.grid(row=1, column=4)
-
-# exp.grid(row=2, column=0)
-# degb.grid(row=2, column=1)
-# sinb.grid(row=2, column=2)
-# cosb.grid(row=2, column=3)
-# tanb.grid(row=2, column=4)
-
-# sqrtm.grid(row=3, column=0)
-# ac.grid(row=3, column=1)
-bksp.grid(row=3, column=2)
-# mod.grid(row=3, column=3)
-# div.grid(row=3, column=4)
 
 zero.grid(row=7, column=2)
 one.grid(row=6, column=1)
@@ -121,14 +110,31 @@ seven.grid(row=4, column=1)
 eight.grid(row=4, column=2)
 nine.grid(row=4, column=3)
 
+
+pi.grid(row=6, column=0)
+lg.grid(row=1, column=0)
+ln.grid(row=1, column=1)
+# par1nd.grid(row=1, column=2)
+# par2nd.grid(row=1, column=3)
+div.grid(row=3, column=4)
+mult.grid(row=4, column=4)
+minus.grid(row=5, column=4)
+plus.grid(row=6, column=4)
+equal.grid(row=7, column=3)
+
+dot.grid(row=1, column=4)
+bksp.grid(row=3, column=2)
+cls.grid(row=3, column=3)
+
+# exp.grid(row=2, column=0)
+# degb.grid(row=2, column=1)
+# sinb.grid(row=2, column=2)
+# cosb.grid(row=2, column=3)
+# tanb.grid(row=2, column=4)
+# sqrtm.grid(row=3, column=0)
+# ac.grid(row=3, column=1)
+# mod.grid(row=3, column=3)
 # fact.grid(row=4, column=0)
-# mult.grid(row=4, column=4)
-
 # frac.grid(row=5, column=0)
-# minus.grid(row=5, column=4)
-# plus.grid(row=6, column=4)
-
 # e_b.grid(row=7, column=1)
-# equal.grid(row=7, column=3)
-
 root.mainloop()
